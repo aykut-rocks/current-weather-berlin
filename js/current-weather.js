@@ -14,17 +14,34 @@
 		let time = new Date(1970, 0, 1);
 		time.setSeconds(seconds);
 		
-		let day = time.getDay();
-		let date = time.getDate();
-		let hours = time.getHours();
-		let minutes = time.getMinutes();
-		let month = time.getMonth();
-		let year = time.getFullYear();
+		const options = {
+			year: 'numeric', 
+			month: 'long',
+			weekday: 'long',
+			day: 'numeric',
+			hour: 'numeric',
+			minute: 'numeric'
+		};
 
-		let dayName = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
-		let monthName = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+		const formatter = new Intl.DateTimeFormat('de-DE', options);
 
-		timeOfDataCalculation = dayName[day] + ', ' + date + '. ' + monthName[month] + ' ' + year + ', ' + hours + ':' + minutes + ' Uhr';
+		let timeOfDataCalculation = '';
+
+		if (window.Intl && typeof window.Intl === "object") {
+			timeOfDataCalculation = formatter.format(time) + ' Uhr';
+		} else {
+			let day = time.getDay();
+			let date = time.getDate();
+			let hours = time.getHours();
+			let minutes = time.getMinutes();
+			let month = time.getMonth();
+			let year = time.getFullYear();
+	
+			let dayName = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+			let monthName = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+	
+			timeOfDataCalculation = dayName[day] + ', ' + date + '. ' + monthName[month] + ' ' + year + ', ' + hours + ':' + minutes + ' Uhr';	
+		}
 
 		return timeOfDataCalculation;
 	};
