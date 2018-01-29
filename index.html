@@ -1,15 +1,40 @@
 <!doctype html>
 <meta charset="utf-8" />
-<title>Current Weather Berlin</title>
+<title>Current Weather</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/current-weather.css" />
 <main>
-	<header>
-		<h1>Current Weather Berlin</h1>
-	</header>
-	<section>
-		<h2>displays the current weather data for Berlin-Germany</h2>
-		<div class="weather">
-			<ul class="weather__data"></ul>
+	<div class="weather">
+		<div class="weather__data">
+			<div class="weather__data__location">
+				<span class="weather__data__location__city"></span>
+				<span class="weather__data__location__country"></span>
+			</div>
+			<div class="weather__data__datetime">
+				<span>Messzeit:</span>
+			</div>
+			<div class="weather__data__description"></div>
+			<div class="weather__data__current">
+				<span class="weather__data__current__icon"></span>
+				<span class="weather__data__current__temperature"></span>
+			</div>
 		</div>
-	</section>
+		<div class="weather__data__additional">
+			<div class="weather__data__additional__humidity">
+				<span>Luftfeuchtigkeit:</span>
+			</div>
+			<div class="weather__data__additional__pressure">
+				<span>Luftdruck:</span>
+			</div>
+			<div class="weather__data__additional__wind">
+				<span class="weather__data__additional__wind__speed">
+					<span>Windgeschwindigkeit:</span>
+				</span>
+				<span class="weather__data__additional__wind__direction">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z" /></svg>
+				</span>
+			</div>
+		</div>
+	</div>
 	<script src="js/current-weather.js"></script>
 </main>

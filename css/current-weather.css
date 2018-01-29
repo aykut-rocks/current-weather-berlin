@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+}
+.weather {
+    padding: 5%;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.weather__data__current__temperature {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.weather__data__current__temperature span {
+    vertical-align: super;
+    font-size: 1.5rem;
+}
+.weather__data__location {
+    font-weight: 700;
+}
+.weather__data__description {
+    color: navy;
+    font-weight: 700;
+}
+.weather__data__datetime {
+    font-size: 1rem;
+    color: grey;
+}
+.weather__data__additional {
+    color: grey;
+}
